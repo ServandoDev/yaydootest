@@ -138,3 +138,8 @@
 .badge span {
   font-size: 1em !important;
 }
+
+.scroll-vertical {
+  max-height: 80vh;
+  overflow-y: auto;
+}
