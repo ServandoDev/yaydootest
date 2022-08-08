@@ -1,12 +1,15 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
 
 const List: NextPage = () => {
 
     // constructor
     const [users, setUsers]: any = useState([]);
     const [user, setUser]: any = useState(null);
+    const router = useRouter();
+    const email = router.query.email;
 
     // flags
     const [error, setError] = useState(false);
@@ -80,10 +83,13 @@ const List: NextPage = () => {
                 <div className='container-fluid p-5'>
                     <div className='row'>
                         <div className='col-12'>
-                            <h3>Users</h3>
+                            <h5>Welcome back {email}!</h5>
                         </div>
                     </div>
-                    <div className='row'>
+                    <div className='row border p-2'>
+                        <div className='col-12'>
+                            <h3>Friends</h3>
+                        </div>
                         {
                             users.map((user: any) =>
                                 <div key={user.id} className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 mt-2 d-flex align-items-stretch">
@@ -122,6 +128,39 @@ const List: NextPage = () => {
                                 </div>
                             )
                         }
+                    </div>
+                    <div className='row mt-2 mb-2 border'>
+                        <div className='col-12'>
+                            <h3>Last updates</h3>
+                        </div>
+                        <div className='col-12'>
+                            <div className="list-group border-0">
+                                <a href="#" className="list-group-item border-0" aria-current="true">
+                                    <div className="d-flex w-100 justify-content-between">
+                                        <h5 className="mb-1">Friend name 1</h5>
+                                        <small>3 days ago</small>
+                                    </div>
+                                    <p className="mb-1">Do u see the last movie of thor?</p>
+                                    <small>Click for more</small>
+                                </a>
+                                <a href="#" className="list-group-item border-0">
+                                    <div className="d-flex w-100 justify-content-between">
+                                        <h5 className="mb-1">Friend name 2</h5>
+                                        <small className="text-muted">5 days ago</small>
+                                    </div>
+                                    <p className="mb-1">Eating at Sierra Madre Brewing</p>
+                                    <small>Click for more</small>
+                                </a>
+                                <a href="#" className="list-group-item border-0">
+                                    <div className="d-flex w-100 justify-content-between">
+                                        <h5 className="mb-1">Friend name 3</h5>
+                                        <small className="text-muted">12 days ago</small>
+                                    </div>
+                                    <p className="mb-1">Someone to go out tonight?</p>
+                                    <small>Click for more</small>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div className="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabIndex={-1} id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                         <div className="offcanvas-header">

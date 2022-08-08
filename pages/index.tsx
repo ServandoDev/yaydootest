@@ -60,7 +60,10 @@ const Home: NextPage = () => {
       if (data.error) {
         setPasswordOrEmailWrong(true);
       } else if (data.token) {
-        router.push('/list');
+        router.push({
+          pathname: '/list',
+          query: { email: email }
+        });
       }
       setLoginSuccess(false);
     }).catch(() => {
