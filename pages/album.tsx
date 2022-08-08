@@ -56,7 +56,7 @@ const Album: NextPage = () => {
                 <div className='container-fluid p-5 mt-4'>
                     <div className='row'>
                         <div className='col-12 text-center'>
-                            <h3 className='text-light'>Album of {user.first_name + ' ' + user.last_name}</h3>
+                            <h3 className='text-dark'>Album of {user.first_name + ' ' + user.last_name}</h3>
                         </div>
                     </div>
                     <div className='row'>
