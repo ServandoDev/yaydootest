@@ -45,8 +45,8 @@ const Post: NextPage = () => {
 
     return (
         <div>
-            <main>
-                <div className="d-flex justify-content-between align-items-center w-100 navbar-page p-2">
+            <main className='bg-page'>
+                <div className="d-flex justify-content-between align-items-center w-100 fixed-top p-2">
                     <Link href={'/list'}>
                         <button className='btn btn-sm d-flex align-content-center'>
                             <span className='material-icons'>
@@ -64,10 +64,10 @@ const Post: NextPage = () => {
                         </button>
                     </Link>
                 </div>
-                <div className='container-fluid p-5'>
+                <div className='container-fluid p-5 mt-4'>
                     <div className='row'>
                         <div className='col-xl-3 col-lg-4 col-md-12 col-sm-12 col-xs-12'>
-                            <div className='card mt-2 border-0'>
+                            <div className='card mt-2 border-0 card-selection'>
                                 <div className="card-body text-center">
                                     <img className='rounded' src={user.avatar?.toString()} alt="avatar" />
                                     <h5 className="card-title">
@@ -80,7 +80,7 @@ const Post: NextPage = () => {
                                         Welcome to my profile, feel free to take a look to my posts and don't forget to leave a like or a comment!
                                     </p>
                                     <p className="card-text">
-                                        <small className="text-muted">Last updated 3 mins ago</small>
+                                        <small>Last updated 3 mins ago</small>
                                     </p>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const Post: NextPage = () => {
                                 posts.map((post: any) =>
                                     <div key={post.id} className='row mt-2 border-bottom'>
                                         <div className='col-12'>
-                                            <div className="card w-100 border-0">
+                                            <div className="card w-100 border-0 card-selection">
                                                 <div className="card-header d-flex justify-content-between border-0">
                                                     <h5>{user.first_name + " " + user.last_name + ' says:'}</h5>
                                                     <button type='button' className='btn btn-outline-danger'
@@ -107,7 +107,7 @@ const Post: NextPage = () => {
                                                     <p className="card-text">
                                                         {post.body}
                                                     </p>
-                                                    <div className="card-footer border-0 d-flex w-100 justify-content-between text-muted">
+                                                    <div className="card-footer border-0 d-flex w-100 justify-content-between">
                                                         <p>{getRandomDays()}</p>
                                                         <div className='d-inline'>
                                                             <div className="badge rounded-pill text-bg-light d-flex align-items-center">

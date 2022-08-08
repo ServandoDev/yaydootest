@@ -60,8 +60,8 @@ const List: NextPage = () => {
 
     return (
         <div>
-            <main>
-                <div className="d-flex justify-content-end align-items-center w-100 navbar-page p-2">
+            <main className='bg-page'>
+                <div className="d-flex justify-content-end align-items-center fixed-top w-100 p-2">
                     <Link href={'./'}>
                         <button className='btn btn-sm d-flex align-content-center'>
                             Logout
@@ -80,15 +80,69 @@ const List: NextPage = () => {
                         </div>
                         : null
                 }
-                <div className='container-fluid p-5'>
-                    <div className='row'>
-                        <div className='col-12'>
-                            <h5>Welcome back {email}!</h5>
+                <div className='container-fluid p-5 mt-4'>
+                    <div className='row mt-2 mb-2'>
+                        <div className='col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 '>
+                            <div className='card p-2 card-secondary'>
+                                <h3>Last updates</h3>
+                                <div className="list-group">
+                                    <a href="#" className="list-group-item border-0" aria-current="true">
+                                        <div className="d-flex w-100 justify-content-between">
+                                            <h5 className="mb-1">Friend name 1</h5>
+                                            <small>3 days ago</small>
+                                        </div>
+                                        <p className="mb-1">Do u see the last movie of thor?</p>
+                                        <small>Click for more</small>
+                                    </a>
+                                    <a href="#" className="list-group-item border-0">
+                                        <div className="d-flex w-100 justify-content-between">
+                                            <h5 className="mb-1">Friend name 2</h5>
+                                            <small>5 days ago</small>
+                                        </div>
+                                        <p className="mb-1">Eating at Sierra Madre Brewing</p>
+                                        <small>Click for more</small>
+                                    </a>
+                                    <a href="#" className="list-group-item border-0">
+                                        <div className="d-flex w-100 justify-content-between">
+                                            <h5 className="mb-1">Friend name 3</h5>
+                                            <small>12 days ago</small>
+                                        </div>
+                                        <p className="mb-1">Someone to go out tonight?</p>
+                                        <small>Click for more</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'>
+                            <div className='card card-accent'>
+                                <div className="card-body">
+                                    <h5 className="card-title">New features in the app</h5>
+                                    <p className="card-text">Check the last update in the app to see all the details</p>
+                                </div>
+                            </div>
+                            <div className='card card-secondary mt-2'>
+                                <div className="card-body">
+                                    <h5 className="card-title">You have (2) notifications</h5>
+                                    <p className="card-text">Click to see them</p>
+                                </div>
+                            </div>
+                            <div className='card card-secondary mt-2'>
+                                <div className="card-body">
+                                    <h5 className="card-title">1 new friend request</h5>
+                                    <p className="card-text">View</p>
+                                </div>
+                            </div>
+                            <div className='card card-secondary mt-2'>
+                                <div className="card-body">
+                                    <h5 className="card-title">Update a story now</h5>
+                                    <p className="card-text">Click here</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className='row border p-2'>
+                    <div className='row p-2'>
                         <div className='col-12'>
-                            <h3>Friends</h3>
+                            <h3 className='text-dark'>Friends</h3>
                         </div>
                         {
                             users.map((user: any) =>
@@ -110,57 +164,28 @@ const List: NextPage = () => {
                                                 {user.job}
                                             </p>
                                         </div>
-                                        <div className="card-body d-flex justify-content-between align-items-end">
+                                        <div className="card-body border-0 d-flex justify-content-between align-items-end">
                                             <Link href={{
                                                 pathname: "/album",
                                                 query: user
                                             }}>
-                                                <button className='btn btn-primary btn-card'>Album</button>
+                                                <button className='btn btn-accent btn-card' title='View album'>
+                                                    <span className='material-icons'>collections</span>
+                                                </button>
                                             </Link>
                                             <Link href={{
                                                 pathname: "/post",
                                                 query: user
                                             }}>
-                                                <button className='btn btn-success btn-card'>Post</button>
+                                                <button className='btn btn-success btn-card' title='View osts'>
+                                                    <span className='material-icons'>edit_note</span>
+                                                </button>
                                             </Link>
                                         </div>
                                     </div>
                                 </div>
                             )
                         }
-                    </div>
-                    <div className='row mt-2 mb-2 border'>
-                        <div className='col-12'>
-                            <h3>Last updates</h3>
-                        </div>
-                        <div className='col-12'>
-                            <div className="list-group border-0">
-                                <a href="#" className="list-group-item border-0" aria-current="true">
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <h5 className="mb-1">Friend name 1</h5>
-                                        <small>3 days ago</small>
-                                    </div>
-                                    <p className="mb-1">Do u see the last movie of thor?</p>
-                                    <small>Click for more</small>
-                                </a>
-                                <a href="#" className="list-group-item border-0">
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <h5 className="mb-1">Friend name 2</h5>
-                                        <small className="text-muted">5 days ago</small>
-                                    </div>
-                                    <p className="mb-1">Eating at Sierra Madre Brewing</p>
-                                    <small>Click for more</small>
-                                </a>
-                                <a href="#" className="list-group-item border-0">
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <h5 className="mb-1">Friend name 3</h5>
-                                        <small className="text-muted">12 days ago</small>
-                                    </div>
-                                    <p className="mb-1">Someone to go out tonight?</p>
-                                    <small>Click for more</small>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                     <div className="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabIndex={-1} id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                         <div className="offcanvas-header">
@@ -182,7 +207,7 @@ const List: NextPage = () => {
                                     <input required type="text" className="form-control" id="job" name='job' placeholder="Job"></input>
                                 </div>
                                 <div className='mb-3 w-100 d-flex justify-content-center'>
-                                    <button type='submit' className='btn btn-primary w-100'>Save</button>
+                                    <button type='submit' className='btn btn-accent w-100'>Save</button>
                                 </div>
                             </form>
                         </div>

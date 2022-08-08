@@ -34,8 +34,8 @@ const Album: NextPage = () => {
 
     return (
         <div>
-            <main>
-                <div className="d-flex justify-content-between align-items-center w-100 navbar-page p-2">
+            <main className='bg-page'>
+                <div className="d-flex justify-content-between align-items-center w-100 fixed-top p-2">
                     <Link href={'/list'}>
                         <button className='btn btn-sm d-flex align-content-center'>
                             <span className='material-icons'>
@@ -53,10 +53,10 @@ const Album: NextPage = () => {
                         </button>
                     </Link>
                 </div>
-                <div className='container-fluid p-5'>
+                <div className='container-fluid p-5 mt-4'>
                     <div className='row'>
                         <div className='col-12 text-center'>
-                            <h3>Album of {user.first_name + ' ' + user.last_name}</h3>
+                            <h3 className='text-light'>Album of {user.first_name + ' ' + user.last_name}</h3>
                         </div>
                     </div>
                     <div className='row'>
