@@ -55,7 +55,7 @@ const Album: NextPage = () => {
                 </div>
                 <div className='container-fluid p-5'>
                     <div className='row'>
-                        <div className='col-12'>
+                        <div className='col-12 text-center'>
                             <h3>Album of {user.first_name + ' ' + user.last_name}</h3>
                         </div>
                     </div>
@@ -63,12 +63,12 @@ const Album: NextPage = () => {
                         {
                             albums.map((album: any) =>
                                 <div key={album.id} className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 mt-2 d-flex align-items-stretch'>
-                                    <div className="card w-100">
-                                        <img src="/notFound.png" className="card-img-top" alt={album.title} />
-                                        <div className="card-body">
-                                            <p className="card-text">
+                                    <div className="card-container">
+                                        <img src={album.image ? album.image : "/notFound.png"} alt={album.title} className="image" />
+                                        <div className="overlay">
+                                            <div className="text-overlay">
                                                 {album.title}
-                                            </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
