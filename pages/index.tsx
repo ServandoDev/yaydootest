@@ -126,7 +126,7 @@ const Home: NextPage = () => {
                     }
                   </div>
                   <div className="mb-3 d-grid gap-2 d-flex justify-content-center w-100">
-                    <button type='submit' className='btn btn-primary btn-login w-100'>
+                    <button type='submit' className='btn btn-secondary btn-login w-100'>
                       {loginSuccess ?
                         <div className="spinner-border text-info" role="status">
                           <span className="visually-hidden">Loading...</span>

@@ -8,7 +8,7 @@
 }
 
 .page {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   min-height: 100vh;
 }
 
@@ -136,6 +136,7 @@
 
 .btn-secondary {
   background-color: var(--secondary-color) !important;
+  border: none !important;
 }
 
 .btn-success {
